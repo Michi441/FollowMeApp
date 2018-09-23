@@ -1,42 +1,50 @@
 
+
 <div class="container">
 
+
+  <br>
+  <br>
+  <br>
 
   <div class="row">
 
 
-    <div class="col-md-8 offset-2">
+    <div class="col-md-10 offset-1">
 
-      <br>
-      <br>
-      <br>
-
-      <div class="card text-center">
+      <div class="card">
 
         <div class="card-header">
-          <%= @user.email %> followers
+          <%= @user.email %> followers:
+
         </div>
 
+
         <div class="card-content">
-          <br><br>
+        <ul>
+
+
+
+
           <% @user.followers.each do |f| %>
 
-          <ul>
+          <li>
 
 
+            <p class="lead">
+              <%= link_to f.email, profile_path(f.id) %>
 
-          <p class="lead">
-            <%= link_to f.email, profile_path(f.id) %>
 
-          </p>
-        </ul>
+            </p>
+
+            </li>
 
 
           <% end %>
+
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<h1>followers</h1>
